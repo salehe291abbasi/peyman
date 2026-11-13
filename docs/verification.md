@@ -1,3 +1,19 @@
+# Current landing verification — 2026-11-13
+
+This section supersedes older visual checks below for the role-led redesign.
+
+- Current checks: standalone TypeScript, production build and git diff --check passed.
+- Browser desktop 1280px/document 1270px and mobile 390px/document 380px: no horizontal overflow.
+- Parent role changed its panel; its CTA selected the parent preview. Preview contents differ by role.
+- Guided steps changed the explanation and corresponding preview; RTL ArrowRight navigation selected the previous step.
+- Mobile menu opened and closed with Escape. Stage 10 and FAQ disclosure worked.
+- Hero preview is visible after removing an inherited opacity/transform conflict. Existing animation/pause logic is retained; reduced-motion styles remain in place.
+- Evidence: screenshots/role-led-desktop.jpg.
+- No physical-device, comprehensive accessibility or performance audit; demo only, no backend operations or Sites deployment.
+
+---
+
+# Historical verification (earlier landing)
 # Verification
 
 ## Automated checks
@@ -55,3 +71,4 @@ Final cleanup: removed temporary responsive fixture. No console errors recorded 
 Reference revision: hero from supplied Downloads HTML, body from source sample. Build and TypeScript passed. Desktop1366/document1356 and mobile390/document380 had no horizontal overflow. Six role tabs, ArrowLeft, FAQ category/disclosure, screenshot tabs and mobile menu/link closing checked. Initial SVG attribute warnings corrected. New screenshots: reference-desktop.jpg and reference-mobile.jpg. No physical-device/full accessibility audit.
 
 Dark revision: build/typecheck passed; hero marker and status advance from the same clock, pause keeps marker unchanged between observations. Stage8 and mobile stage10 selection verified. Preview no longer renders raster screenshots; local font verified. Benefits heading static, positive measured separation from trust strip, centered solution numbers. Desktop1270 and mobile390/document380 no overflow. Reduced-motion support implemented, not separately browser-emulated.
+

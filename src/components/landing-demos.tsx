@@ -10,6 +10,7 @@ import {
   Route,
 } from "lucide-react";
 import { tabKey } from "./product-preview";
+import { landingPreviews } from "@/lib/content";
 const stages = [
   "پیش‌نویس",
   "ارسال",
@@ -242,6 +243,7 @@ const titles = [
   "صندوق تأمین‌کننده",
 ];
 export function PanelPreview({ view }: { view: number }) {
+  const preview = landingPreviews[view] ?? landingPreviews[0];
   return (
     <div className="coded-panel">
       <aside>
@@ -261,22 +263,12 @@ export function PanelPreview({ view }: { view: number }) {
         </div>
         <div className="coded-welcome">
           <span>یک تصویر روشن از کارهای امروز</span>
-          <h4>
-            {view === 4
-              ? "درخواست‌های مرتبط با خدمات شما"
-              : view === 3
-                ? "پیش از رضایت، جزئیات برنامه را ببینید"
-                : "وضعیت هر پرونده، قدم بعدی هر مسئول"}
-          </h4>
+          <h4>{preview.heading}</h4>
           <p>پروندهٔ بازدید علمی · مرکز علم و فناوری · پایهٔ هفتم</p>
         </div>
         <div className="coded-stats">
-          {[
-            { Icon: FileCheck2, value: "۱", label: "نیازمند بررسی" },
-            { Icon: Route, value: "۳", label: "پروندهٔ فعال" },
-            { Icon: Users, value: "۳۶", label: "شرکت‌کننده" },
-          ].map(({Icon, value, label}, i) => {
-            const Component = Icon;
+          {preview.stats.map(([value, label], i) => {
+            const Component = [FileCheck2, Route, Users][i];
             return (
               <div key={i}>
                 <Component size={23} />
@@ -287,30 +279,17 @@ export function PanelPreview({ view }: { view: number }) {
           })}
         </div>
         <div className="coded-table">
-          <h4>
-            {view === 4
-              ? "صندوق درخواست‌های رزرو"
-              : view === 3
-                ? "وضعیت رضایت فرزندان"
-                : "پرونده‌های نیازمند اقدام"}
-          </h4>
-          {[
-            "بازدید از مرکز علوم",
-            "اردوی فرهنگی و موزه",
-            "بازدید آموزشی طبیعت",
-          ].map((s, i) => (
+          <h4>{preview.group}</h4>
+          {preview.rows.map(([s, description, status], i) => (
             <div key={s}>
               <span className="coded-avatar">
                 {(i + 1).toLocaleString("fa")}
               </span>
               <span>
                 <strong>{s}</strong>
-                <small>مدرسهٔ نمونه · برنامهٔ یک‌روزه</small>
+                <small>{description}</small>
               </span>
-              <span className="coded-status">
-                {["در انتظار بررسی", "تکمیل مدارک", "آماده‌سازی"][i]}
-              </span>
-              <span className="coded-action">مشاهده ←</span>
+              <span className="coded-status">{status}</span>
             </div>
           ))}
         </div>
@@ -321,4 +300,3 @@ export function PanelPreview({ view }: { view: number }) {
     </div>
   );
 }
-
