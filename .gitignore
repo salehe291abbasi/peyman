@@ -4,9 +4,3 @@ out/
 *.tsbuildinfo
 .env*
 !.env.example
-tmp/
-.codex/
-.agents/
-# Original reference documents and sample archives stay local.
-/*.pdf
-/source sample/

@@ -1,9 +1,0 @@
-# Current state — 2026-11-13
-
-Current landing uses the user-requested dark ink/violet/gold styling across most sections. Latest fixes: removed sticky positioning from benefits heading (it overlapped the trust cards), centered solution numbers, replaced static ten-step grid with accessible stage picker/detail/progress, restored synchronized hero route-marker and eight status animation, and replaced green screenshot previews with code-rendered dark/violet panels using the local Vazirmatn font.
-
-`landing-demos.tsx` contains HeroRoute, Lifecycle and PanelPreview. Hero animation uses one requestAnimationFrame clock for position and status, pauses in hidden documents, supports a pause button and responds to reduced-motion preference. Demo panel content is illustrative, not an operational dashboard. Original reference images remain on disk but no longer appear in current previews.
-
-Current verification: production build and standalone TypeScript passed. Browser observed marker/status changing together; pause held its position across successive observations. Stage8 and mobile stage10 selection worked. Preview supplier tab changed title. Computed benefits heading is static; measured gap to trust cards positive (315.8px). Numbers use centered flex alignment. Desktop1270 and mobile390/document380 have no horizontal overflow. Current font is Vazirmatn Variable. Screenshot evidence: dark-lifecycle.jpg, dark-panel.jpg, dark-mobile.jpg and dark-hero.jpg under web/docs/screenshots. No physical-device or comprehensive accessibility/performance audit performed.
-
-Existing user dev server at127.0.0.1:3000 reused and left running. Temporary QA fixture removed. Backend/API/auth/launch decisions remain TBD. Next: user review of dark theme, synchronized hero animation and redesigned lifecycle; resolve concrete feedback before operational panels.
