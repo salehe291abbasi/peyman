@@ -17,15 +17,22 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export const viewport: Viewport = { themeColor: "#0a0f24" };
+export const viewport: Viewport = { themeColor: "#f8f9fc" };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fa" dir="rtl">
+    <html lang="fa" dir="rtl" data-theme="light" suppressHydrationWarning>
+      <head>
+        {/* Apply only a validated saved choice before paint; new visitors start in light mode. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(localStorage.getItem("peyman-theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){console.warn("Peyman theme preference is unavailable; using light mode.")}})()`,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
 }
-

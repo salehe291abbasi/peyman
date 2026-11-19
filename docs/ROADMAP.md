@@ -11,8 +11,9 @@ Status: **planned** = not started; **in progress** = active work; **implemented*
 
 ## 2. Validate and finalize landing — next milestone
 
-- [x] **Verified** — Ink/violet/gold role-led landing implemented with focused desktop/mobile browser checks, TypeScript and production build. See `docs/verification.md`; user acceptance remains pending.
-- [ ] **Planned** — Obtain user feedback on the redesigned desktop/mobile landing and refine approved issues.
+- [x] **Verified** — Ink/violet/gold role-led landing implemented with focused desktop/mobile browser checks, TypeScript and production build. See `docs/verification.md`; superseded by the accepted light-default refinement below.
+- [x] **Verified** — Applied user feedback on excessive darkness: light default, persisted single-icon light/dark switch, coordinated landing/demo palettes, refined header with preview-only login dialog and structured footer; typecheck, build and focused desktop/mobile QA passed on 2026-11-19.
+- [x] **Verified** — User accepted the light-default header/footer refinement and authorized commit/push on 2026-11-19.
 - [ ] **Planned** — Test key tasks with representative school staff; collect terminology and comprehension findings.
 - [ ] **Planned** — Resolve observed UX issues; verify changed behavior and layout.
 - [ ] **Planned** — Measure accessibility and performance; inspect on real phones. Choose additional tooling only if needed.

@@ -11,4 +11,4 @@
 
 No backend framework, hosting provider, auth mechanism or final financial model is approved by this frontend audit.
 
-User directed revision: use the supplied Downloads HTML hero and local source-sample body. Current palette is ink/violet/gold. Previous blue redesign was rejected; current user acceptance pending.
+User directed revision: use the supplied Downloads HTML hero and local source-sample body. Current identity retains violet/gold accents. On 2026-11-19, user requested a lighter professional landing and light default with an optional dark theme. Implemented white/light-gray surfaces, navy text and local preference persistence; user accepted the refinement on 2026-11-19. Previous blue redesign was rejected.

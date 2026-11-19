@@ -1,3 +1,51 @@
+export const themeContent = {
+  label: "حالت تیره",
+  toLight: "تغییر به حالت روشن",
+  toDark: "تغییر به حالت تیره",
+  storageUnavailable:
+    "رنگ صفحه تغییر کرد؛ امکان ذخیرهٔ انتخاب در این مرورگر وجود ندارد.",
+};
+
+export const landingNavigation = [
+  { label: "پیمان برای شما", href: "#roles" },
+  { label: "تجربهٔ محصول", href: "#preview" },
+  { label: "مسیر اردو", href: "#lifecycle" },
+  { label: "پرسش‌ها", href: "#questions" },
+];
+
+export const accessContent = {
+  trigger: "ورود",
+  title: "ورود به پیمان",
+  badge: "نسخهٔ پیش‌نمایش",
+  description:
+    "ورود به حساب کاربری هنوز فعال نیست. تا آماده‌شدن این بخش، می‌توانید محیط نمونهٔ مرتبط با نقش خود را ببینید.",
+  preview: "مشاهدهٔ محیط نمونه",
+  close: "بستن پنجرهٔ ورود",
+  note: "برای دیدن نمونه‌ها نیازی به ثبت‌نام یا اطلاعات شخصی نیست.",
+};
+
+export const footerContent = {
+  label: "پاورقی پیمان",
+  eyebrow: "همراهِ مدرسه، در تمام مسیر",
+  title: "یک هماهنگی بهتر،",
+  titleAccent: "هزار تجربهٔ به‌یادماندنی.",
+  description:
+    "از اولین برنامه‌ریزی تا آخرین «رسیدیم»، تصویر روشنی از مسیر پیش رو داشته باشید.",
+  action: "پیمان را تجربه کنید",
+  about:
+    "پیمان، نقطهٔ اتصال مدرسه، خانواده و همراهان اردو؛ برای هماهنگی دقیق‌تر و تجربه‌های یادگیری بهتر.",
+  navigation: "کشف پیمان",
+  audiences: "برای همراهان اردو",
+  status: "با پیمان آشنا شوید",
+  statusTitle: "یک نگاه نزدیک، پیش از شروع",
+  statusDescription:
+    "محیط محصول را با اطلاعات نمونه ببینید و مسیر هر نقش را بشناسید.",
+  statusAction: "دیدن پیش‌نمایش محصول",
+  note: "نسخهٔ نمایشی · ثبت‌نام، رزرو و پرداخت فعال نیست.",
+  signature: "با توجه به جزئیات، برای تجربه‌های بهتر.",
+  top: "ابتدای صفحه",
+};
+
 export type Category = "all" | "nature" | "science" | "culture";
 
 export type Experience = {

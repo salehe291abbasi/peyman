@@ -22,8 +22,10 @@ public/                   Local illustrative assets
 - `content.ts` supplies current landing copy, roles and distinct preview records. `faq-content.ts` supplies grouped questions. Older editorial records and `reference-content.ts` are retained; they do not describe the current page structure.
 - `landing-demos.tsx` supplies HeroRoute, Lifecycle and PanelPreview. HeroRoute synchronizes marker/status using requestAnimationFrame, with cleanup, visibility handling, pause and reduced-motion support.
 - `product-preview.tsx` retains the shared RTL keyboard tab helper and earlier sample preview component. The current landing does not render the earlier dialog/filter experience.
+- `login-entry.tsx` provides the native preview-only access dialog; selecting a role closes it and focuses the corresponding sample panel. `landing-footer.tsx` groups navigation and audience links using shared content; it replaces the standalone closing block.
+- `theme-toggle.tsx` controls light/dark selection through a single icon switch with keyboard support. Layout defaults to light and reads only a validated saved dark preference before paint; CSS tokens style both themes. Storage failure preserves in-page switching and announces that the preference cannot be saved.
 - `brand.tsx` owns shared identity; `globals.css` owns tokens, responsive styling and reduced-motion rules. Current landing styles are scoped under `.peyman-landing` and `pl-*` classes.
-- Native `details` provides FAQ disclosure. Sample data and state stay local; no operational API or persistent storage is used.
+- Native `details` provides FAQ disclosure. Sample data and business state stay local; no operational API is used. Only the light/dark preference persists in localStorage (peyman-theme).
 
 ## Boundaries
 

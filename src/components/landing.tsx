@@ -16,9 +16,12 @@ import {
   X,
 } from "lucide-react";
 import { Brand } from "./brand";
+import { ThemeToggle } from "./theme-toggle";
+import { LoginEntry } from "./login-entry";
+import { LandingFooter } from "./landing-footer";
 import { HeroRoute, Lifecycle, PanelPreview } from "./landing-demos";
 import { tabKey } from "./product-preview";
-import { landingContent as content } from "@/lib/content";
+import { landingContent as content, landingNavigation } from "@/lib/content";
 import { faqGroups } from "@/lib/faq-content";
 
 const roleIcons = [GraduationCap, HeartHandshake, ClipboardList, ShieldCheck];
@@ -59,14 +62,27 @@ export function Landing() {
             aria-label="ناوبری اصلی"
             onClick={() => setMenu(false)}
           >
-            <a href="#roles">پیمان برای شما</a>
-            <a href="#preview">تجربهٔ محصول</a>
-            <a href="#lifecycle">مسیر اردو</a>
-            <a href="#questions">پرسش‌ها</a>
+            {landingNavigation.map((link) => (
+              <a key={link.href} href={link.href}>
+                {link.label}
+              </a>
+            ))}
           </nav>
-          <a className="pl-button pl-button-small" href="#preview">
-            کاوش در دمو <ArrowUpLeft size={17} aria-hidden="true" />
-          </a>
+          <div className="pl-nav-actions">
+            <ThemeToggle />
+            <span className="pl-nav-divider" aria-hidden="true" />
+            <LoginEntry
+              onPreview={(index) => {
+                setRole(index);
+                setShot(content.roles[index].view);
+                requestAnimationFrame(() =>
+                  document
+                    .getElementById("shot-panel")
+                    ?.focus({ preventScroll: true }),
+                );
+              }}
+            />
+          </div>
           <button
             ref={menuButton}
             className="pl-menu"
@@ -452,25 +468,8 @@ export function Landing() {
             </div>
           </div>
         </section>
-        <section className="pl-closing pl-container">
-          <span className="pl-eyebrow">همراهِ مدرسه، همراهِ مسیر</span>
-          <h2>
-            برای تجربه‌های بهتر،
-            <br />
-            از هماهنگی بهتر شروع کنیم.
-          </h2>
-          <a className="pl-button" href="#roles">
-            پیمان را از نگاه خودتان ببینید
-            <ArrowLeft size={19} aria-hidden="true" />
-          </a>
-          <p>{content.demoNote}</p>
-        </section>
       </main>
-      <footer className="pl-footer pl-container">
-        <Brand />
-        <p>پیمان؛ هماهنگی تجربه‌های یادگیری، از درخواست تا بازگشت.</p>
-        <a href="#top">بازگشت به بالا ↑</a>
-      </footer>
+      <LandingFooter onRole={setRole} />
     </div>
   );
 }
